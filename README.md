@@ -1,6 +1,6 @@
 # Trello Clone — Kanban Project Management App
 
-A fully-featured Trello-like Kanban board built with **React**, **TypeScript**, **Tailwind CSS**, **Zustand**, and **dnd-kit**.
+A fully-featured Trello-like Kanban board built with **React**, **TypeScript**, **Tailwind CSS**, **Zustand**, and **dnd-kit** on the frontend, and a **Node.js + Express + PostgreSQL** REST API on the backend.
 
 ## ✨ Features
 
@@ -46,8 +46,9 @@ src/
 ### Prerequisites
 - Node.js 18+
 - npm 9+
+- PostgreSQL 14+ (for backend)
 
-### Installation
+### Frontend
 
 ```bash
 # Clone the repository
@@ -57,7 +58,7 @@ cd Trello-Clone
 # Install dependencies
 npm install
 
-# Copy env example
+# Copy env example and set VITE_API_BASE_URL=http://localhost:3001
 cp .env.example .env
 
 # Start dev server
@@ -65,6 +66,29 @@ npm run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Backend
+
+```bash
+cd backend
+
+# Install dependencies
+npm install
+
+# Copy env example and fill in your PostgreSQL credentials
+cp .env.example .env
+
+# Create the database
+createdb trello_clone
+
+# Run migrations + seed data
+npm run migrate
+
+# Start the API server (http://localhost:3001)
+npm run dev
+```
+
+See [`backend/README.md`](./backend/README.md) for the full API reference.
 
 ## 🏗️ Build
 
